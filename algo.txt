@@ -1,0 +1,17 @@
+Algorithme Calcul Puissance
+
+Variables
+    i:entier
+    j: entier
+    r :réels
+    tab[100] : entier
+
+Debut
+
+
+    AFFICHER Saisissez la valeur de j
+    SAISIR j
+
+    AFFICHER La valeur de j est
+    AFFICHER j
+Fin
