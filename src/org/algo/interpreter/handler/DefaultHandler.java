@@ -27,6 +27,8 @@ public class DefaultHandler implements Handler {
             } else {
                 InterpreterException.invokeNew("Ligne " + line + " : vous tentez d'assigner une valeur à une variable inconnue", algorithm.getPrinter());
             }
+        } else {
+            InterpreterException.invokeNew("Ligne " + line + " : erreur syntaxe", algorithm.getPrinter());
         }
 
         return true;

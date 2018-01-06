@@ -6,7 +6,7 @@ import javax.script.ScriptException;
 
 import static org.algo.interpreter.utils.StringUtils.fullTrim;
 
-public class Calculator {
+public class OpexM {
     public static final ScriptEngine javaScript = new ScriptEngineManager().getEngineByName("JavaScript");
 
     public static double result(String operation) {
@@ -32,6 +32,17 @@ public class Calculator {
             javaScript.eval(operation);
             return true;
         } catch (ScriptException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+
+    public static boolean checkBoolean(String operation) {
+        try {
+            return (boolean) javaScript.eval(operation);
+        } catch (ScriptException e) {
+            e.printStackTrace();
             return false;
         }
     }

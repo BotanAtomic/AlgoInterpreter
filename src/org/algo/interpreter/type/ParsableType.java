@@ -3,7 +3,7 @@ package org.algo.interpreter.type;
 import org.algo.interpreter.core.Algorithm;
 import org.algo.interpreter.exception.InterpreterException;
 import org.algo.interpreter.object.Variable;
-import org.algo.interpreter.utils.Calculator;
+import org.algo.interpreter.utils.OpexM;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -66,8 +66,8 @@ public class ParsableType {
                 AtomicReference<String> opex = new AtomicReference<>(parsableValue);
                 algorithm.getVariables().forEach((key, value) -> opex.set(opex.get().replaceAll(key, String.valueOf(value.getValue()))));
 
-                if(Calculator.isValidOperation(opex.get())) {
-                    result =  Calculator.result(opex.get());
+                if(OpexM.isValidOperation(opex.get())) {
+                    result =  OpexM.result(opex.get());
                 } else {
                     InterpreterException.invokeNew("Ligne " + line + " : ligne de calcul incorrect, il se peut que des variables soient inconnues", algorithm.getPrinter());
                 }

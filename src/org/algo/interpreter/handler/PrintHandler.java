@@ -1,8 +1,9 @@
 package org.algo.interpreter.handler;
 
 import org.algo.interpreter.core.Algorithm;
-import org.algo.interpreter.exception.InterpreterException;
 import org.algo.interpreter.object.Variable;
+
+import java.util.concurrent.atomic.AtomicReference;
 
 public class PrintHandler implements Handler {
 
@@ -16,10 +17,12 @@ public class PrintHandler implements Handler {
             if (variable != null) {
                 algorithm.getPrinter().print(String.valueOf(variable.getValue()));
             } else {
-                algorithm.getPrinter().print(fullLine.substring("afficher".length() + 1));
+                AtomicReference<String> opex = new AtomicReference<>(fullLine.substring("afficher".length() + 1));
+                algorithm.getVariables().forEach((key, value) -> opex.set(opex.get().replaceAll(key, String.valueOf(value.getValue()))));
+                algorithm.getPrinter().print(opex.get());
             }
         } else {
-            InterpreterException.invokeNew("Ligne " + line + " : format de la fonction AFFICHER incorrect", algorithm.getPrinter());
+            algorithm.getPrinter().print("");
         }
 
         return true;

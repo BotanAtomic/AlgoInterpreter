@@ -5,8 +5,13 @@ import org.algo.interpreter.printer.Printer;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class Algorithm {
+    private Map<Integer,String> lines = new TreeMap<>();
+
+    private int skipTo;
+
     private final Map<String, Variable> variables = new HashMap<>();
 
     private String name;
@@ -35,5 +40,17 @@ public class Algorithm {
 
     public Printer getPrinter() {
         return printer;
+    }
+
+    public Map<Integer, String> getLines() {
+        return lines;
+    }
+
+    public int getSkipTo() {
+        return skipTo;
+    }
+
+    public void setSkipTo(int skipTo) {
+        this.skipTo = skipTo;
     }
 }

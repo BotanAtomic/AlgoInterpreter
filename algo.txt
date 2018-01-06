@@ -8,17 +8,34 @@ Variables
 
 Debut
 
-    r = 5.151
+    i = 0
+    j = 0
 
-    i = 2591
+    Tant_que i < 50
+          Tant_que j < 5008
+               j = j + 1
+               AFFICHER j
 
-    i = i + r + 2 + 6 + 9 +5 +2
+          Fin tant que
 
+        i = i + 1
 
-    AFFICHER Saisissez la valeur de j
-    SAISIR j
+        AFFICHER i
 
-    AFFICHER r
-    AFFICHER i
-    AFFICHER j
+    Fin tant que
+
+    AFFICHER
+
+    SI i == 50
+        AFFICHER La boucle est super
+        AFFICHER Car elle marche parfaitement
+
+    SINON
+        AFFICHER La boucle n'a pas été exécuté
+        AFFICHER Car elle ne marche pas parfaitement
+
+    FINSI
+
+    AFFICHER
+    AFFICHER Boucle terminé !
 Fin
