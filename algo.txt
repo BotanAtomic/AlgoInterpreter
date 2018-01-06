@@ -8,10 +8,17 @@ Variables
 
 Debut
 
+    r = 5.151
+
+    i = 2591
+
+    i = i + r + 2 + 6 + 9 +5 +2
+
 
     AFFICHER Saisissez la valeur de j
     SAISIR j
 
-    AFFICHER La valeur de j est
+    AFFICHER r
+    AFFICHER i
     AFFICHER j
 Fin
