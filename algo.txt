@@ -1,4 +1,4 @@
-Algorithme Calcul Puissance
+Algorithme Test
 
 Variables
     i:entier
